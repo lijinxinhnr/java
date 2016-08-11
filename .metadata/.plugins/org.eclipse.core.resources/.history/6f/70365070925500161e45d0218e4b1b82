@@ -1,0 +1,15 @@
+package com.excel;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+
+import jxl.Workbook;
+
+public class TestExcel {
+public static void main(String[] args) {
+	String path = "";
+	InputStream is = new FileInputStream(path);
+	 Workbook book = null; 
+	 book = new XSSFWorkbook(new FileInputStream(path));  
+}
+}
