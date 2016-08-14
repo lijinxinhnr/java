@@ -1,0 +1,27 @@
+define(function() {
+	var toolBar = {};
+	var datatable = {
+		view : "datatable",
+		select : "cell",
+		columns : [ {
+			id : "orderNumber",
+			header : "备货单号",
+			fillspace : true
+		}, {
+			id : "itemId",
+			header : "物料ID",
+			fillspace : true
+		}, {
+			id : "remark",
+			header : "备注",
+			fillspace : true
+		} ],
+		data : [ {
+			orderNumber : 1111,
+			itemId : "DZ001",
+			remark : "物料的备注"
+		} ]
+	};
+
+	return datatable;
+});

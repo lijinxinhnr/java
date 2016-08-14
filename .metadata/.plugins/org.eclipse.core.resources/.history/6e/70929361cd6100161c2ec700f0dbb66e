@@ -1,0 +1,7 @@
+define(function() {
+	var id = new Date().getTime();
+	var form = {
+		view : "form",
+		id : id,
+	}
+});

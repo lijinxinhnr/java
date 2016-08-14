@@ -1,0 +1,9 @@
+define([ "./leftSearch", "./centerGrid", "./buttomGrid" ], function(leftSearch,
+		centerGrid, buttomGrid) {
+	return {
+		cols : [ {
+			width : 300,
+			body : leftSearch
+		} ]
+	}
+});

@@ -1,0 +1,16 @@
+requirejs.config({
+	baseUrl : './',
+	paths : {
+		"jquery" : 'jquery-1.9.1.min',
+		"webix" : 'js/webix',
+	}
+});
+console.log(2222)
+require([ "./form", "webix" ], function(workSpace) {
+
+	webix.ui({
+		view : "layout",
+		container : "mydiv",
+		rows : [ workSpace ]
+	})
+});

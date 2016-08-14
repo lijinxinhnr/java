@@ -1,0 +1,67 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./js/webix.css"></link>
+
+<script src="js/require.js" data-main="js/main"></script>
+
+<script src="./js/webix.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+	<div id='mydiv'></div>
+	<script type="text/javascript">
+		define([], function() {
+			console.log("define")
+
+		});
+		webix.ready(function() {
+			webix.ui({
+				container : "mydiv",
+				view : "form",
+				id : "myform",
+				elements : [ {
+					view : "text",
+					name : "flag",
+					label : "输入"
+				}, {
+					view : "text",
+					name : "name",
+					label : "名字"
+				}, {
+					view : "text",
+					name : "age",
+					label : "年龄"
+				}, {
+					view : "button",
+					value : "Confirm",
+					width : 200,
+					on : {
+						'onItemClick' : function(id) {
+							var form = $$("myform");
+							var flag = $$("myform").getValues().flag
+							webix.ajax().post("testAction", {
+								flag : flag
+							}, function(data) {
+
+								result = JSON.parse(data).result;
+
+								$$("myform").setValues(result);
+								webix.message("你好" + result.status);
+
+							})
+
+						}
+
+					}
+				} ]
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+define(function() {
+	return {
+		view : "form",
+		id : "myform",
+		elements : [ {
+			view : "text",
+			name : "account",
+			label : "账号"
+		}, {
+			view : "text",
+			name : "passWord",
+			label : "密码"
+		}, {
+			view : "button",
+			value : "登录",
+			on : {
+				'onItemClick' : function(id) {
+					var form = this.getParentView();
+					var form = $$("myform");
+					var flag = $$("myform").getValues().flag
+					webix.ajax().post("testAction", {
+						flag : flag
+					}, function(data) {
+
+						result = JSON.parse(data).result;
+
+						$$("myform").setValues(result);
+						webix.message("你好" + result.status);
+
+					})
+				}
+
+			}
+		} ]
+	}
+});

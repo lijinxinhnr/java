@@ -1,0 +1,13 @@
+define([ "view/order/leftSearch", "view/order//centerGrid",
+		"view/order//buttomGrid" ],
+		function(leftSearch, centerGrid, buttomGrid) {
+			return {
+				cols : [ 
+				         {view:"accordion",
+				        	 }
+				         leftSearch, {
+					rows : [ centerGrid, buttomGrid ]
+				} ]
+
+			}
+		});

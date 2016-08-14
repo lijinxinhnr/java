@@ -1,0 +1,28 @@
+define([ "view/order/leftSearch", "view/order//centerGrid",
+		"view/order//buttomGrid" ],
+		function(leftSearch, centerGrid, buttomGrid) {
+			return {
+				rows : [ centerGrid, {
+					view : "resizer"
+				}, buttomGrid ]
+			
+				/*cols : [ {
+					view : "accordion",
+					
+					multi:true ,
+					cols : [ {
+						header : "查询",
+						width : 300,
+						body : leftSearch
+					} ]
+				}, {
+					view : "resizer"
+				}, {
+
+					rows : [ centerGrid, {
+						view : "resizer"
+					}, buttomGrid ]
+				} ]*/
+
+			}
+		});

@@ -6,13 +6,17 @@
 <struts>
 
 
-	<package name="default" namespace="/" extends="struts-default">
+	<package name="default" namespace="/" extends="json-default">
 
 		<action name="testAction" class="com.action.TestAction">
-			<result>/success.jsp</result>
+
+			<result type="json">
+				<param name="NoCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>
 		</action>
-		<action name="test">
-			<result>WEB-INF/page/test.jsp</result>
+		<action name="*">
+			<result>/index.jsp</result>
 		</action>
 
 	</package>

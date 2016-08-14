@@ -1,0 +1,6 @@
+define(function() {
+	var id = new Date().getTime();
+	var form = {
+
+	}
+});

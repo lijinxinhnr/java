@@ -1,0 +1,6 @@
+define([ "./leftSearch", "./centerGrid", "./buttomGrid" ], function(leftSearch,
+		centerGrid, buttomGrid) {
+	return {
+		leftSearch,centerGrid,buttomGrid
+	}
+});

@@ -1,0 +1,17 @@
+requirejs.config({
+	baseUrl : '/',
+	paths : {
+		"jquery" : 'jquery-1.9.1.min',
+		"webix" : 'js/webix',
+		"path" : location.pathname.split("/webDemo/")[1] ? location.pathname
+				.split("/webDemo/")[1] : "index"
+	}
+});
+
+require([ "path", "webix" ], function(workSpace) {
+	webix.ui({
+		view : "layout",
+		container : "mydiv",
+		rows : [ workSpace ]
+	})
+});

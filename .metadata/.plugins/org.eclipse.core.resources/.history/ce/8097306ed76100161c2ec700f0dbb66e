@@ -1,0 +1,38 @@
+define(function() {
+	var toolBar = {};
+	var datatable = {
+		view : "datatable",
+		select : "cell",
+		autowidth : true,
+		autoheight : true,
+
+		columns : [ {
+			id : "orderNumber",
+			header : "备货单号",
+			width : 200
+		}, {
+			id : "itemId",
+			header : "物料ID",
+			width : 120
+		}, {
+			id : "remark",
+			header : "备注",
+			width : 80
+		} ],
+		data : [ {
+			orderNumber : 1111,
+			itemId : "DZ001",
+			remark : "物料的备注"
+			
+		} ],
+		pager : {
+			template : "{common.prev()} {common.pages()} {common.next()}",
+			size : 10,
+			group : 5
+		},
+	};
+
+	return {
+		rows : [ toolbar, datatable ]
+	};
+});

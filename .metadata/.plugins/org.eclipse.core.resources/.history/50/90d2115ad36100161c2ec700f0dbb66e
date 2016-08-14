@@ -1,0 +1,41 @@
+define(function() {
+	var toolBar = {};
+	var datatable = {
+		view : "datatable",
+		columns : [ {
+			id : "package",
+			header : "Name",
+			width : 200
+		}, {
+			id : "section",
+			header : "Section",
+			width : 120
+		}, {
+			id : "size",
+			header : "Size",
+			width : 80
+		}, {
+			id : "architecture",
+			header : "PC",
+			width : 60
+		} ],
+		pager : { // upper pager
+			template : function(data, common) {
+				var current = data.page + 1;
+				var html = "<select onchange='grida.setPage(this.value)' style='text-align:center; width:150px'>";
+				for (var i = 1; i <= data.limit; i++)
+					html += "<option "
+							+ (i == current ? "selected='true'" : "") + ">" + i
+							+ "</option>";
+				html += "</select> from " + data.limit;
+				return html;
+			},
+			size : 10,
+			group : 5
+		},
+	};
+
+	return {
+		rows : [ toolbar, datatable ]
+	};
+});

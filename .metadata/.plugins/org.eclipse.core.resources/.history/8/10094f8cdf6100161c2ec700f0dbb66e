@@ -1,0 +1,22 @@
+define([ "view/order/leftSearch", "view/order//centerGrid",
+		"view/order//buttomGrid" ],
+		function(leftSearch, centerGrid, buttomGrid) {
+			return {
+				width : document.documentElement.clientWidth,
+				height : document.documentElement.clientHeight,
+				cols : [ {
+					view : "accordion",
+
+					width : 300,
+					rows : [ leftSearch ]
+				}, {
+					view : "resizer"
+				}, {
+
+					rows : [ centerGrid, {
+						view : "resizer"
+					}, buttomGrid ]
+				} ]
+
+			}
+		});

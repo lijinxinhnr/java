@@ -1,0 +1,27 @@
+define(function() {
+	var toolBar = {};
+	var datatable = {
+		view : "datatable",
+		columns : [ {
+			id : "package",
+			header : "Name",
+			width : 200
+		}, {
+			id : "section",
+			header : "Section",
+			width : 120
+		}, {
+			id : "size",
+			header : "Size",
+			width : 80
+		}, {
+			id : "architecture",
+			header : "PC",
+			width : 60
+		} ],
+	};
+
+	return {
+		rows : [ toolbar, datatable ]
+	};
+});
